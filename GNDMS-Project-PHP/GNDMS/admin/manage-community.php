@@ -12,8 +12,8 @@ if (strlen($_SESSION['aid']) == 0) {
     $rid = intval($_GET['delid']);
     $query = mysqli_query($con, "delete from tblcommunity where ID='$rid'");
     if ($query) {
-      echo "<script>alert('College deleted.');</script>";
-      echo "<script>window.location.href ='manage-college.php'</script>";
+      echo "<script>alert('Community deleted.');</script>";
+      echo "<script>window.location.href ='manage-community.php'</script>";
     } else {
       echo "<script>alert('Something Went Wrong. Please try again.');</script>";
     }
@@ -25,7 +25,7 @@ if (strlen($_SESSION['aid']) == 0) {
 
   <head>
 
-    <title>Online Grama Niladhari Division Management System | Manage College</title>
+    <title>Online Grama Niladhari Division Management System | Manage Community</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -108,8 +108,8 @@ if (strlen($_SESSION['aid']) == 0) {
                               <td><?php echo $result['CreationDate'] ?></td>
 
                               <th>
-                                <a href="edit-college.php?cid=<?php echo $result['ID']; ?>" title="Edit College Details"> <i class="fa fa-edit" aria-hidden="true"></i> </a> |
-                                <a href="manage-college.php?delid=<?php echo $result['ID']; ?>" onclick="return confirm('Do you really want to Delete ?');"><i class="fa fa-trash" aria-hidden="true"></i> </a>
+                                <a href="edit-community.php?cid=<?php echo $result['ID']; ?>" title="Edit Community Details"> <i class="fa fa-edit" aria-hidden="true"></i> </a> |
+                                <a href="manage-community.php?delid=<?php echo $result['ID']; ?>" onclick="return confirm('Do you really want to Delete ?');"><i class="fa fa-trash" aria-hidden="true"></i> </a>
 
                               </th>
                             </tr>

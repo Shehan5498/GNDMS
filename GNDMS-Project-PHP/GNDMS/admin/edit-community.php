@@ -15,12 +15,12 @@ if (strlen($_SESSION['aid']) == 0) {
     $result = mysqli_fetch_array($ret);
     if ($result > 0) {
 
-      echo "<script>alert('This college code already exist.');</script>";
+      echo "<script>alert('This code code already exist.');</script>";
     } else {
-      $query = mysqli_query($con, "update tblcommunity set CommunityName='$CommunityName',CollegeCode='$CommunityCode' where ID='$communityid'");
+      $query = mysqli_query($con, "update tblcommunity set CommunityName='$CommunityName',CommunityCode='$CommunityCode' where ID='$communityid'");
       if ($query) {
-        echo "<script>alert('Collge detail updeted successfully.');</script>";
-        echo "<script type='text/javascript'> document.location = 'manage-college.php'; </script>";
+        echo "<script>alert('Community detail updeted successfully.');</script>";
+        echo "<script type='text/javascript'> document.location = 'manage-community.php'; </script>";
       } else {
         echo "<script>alert('Something went wrong. Please try again.');</script>";
       }
@@ -32,7 +32,7 @@ if (strlen($_SESSION['aid']) == 0) {
 
   <head>
 
-    <title>Online College Faculty Record Management System | Update College</title>
+    <title>Online Grama Niladhari Domain Management System | Update Community</title>
 
     <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
 
@@ -66,12 +66,12 @@ if (strlen($_SESSION['aid']) == 0) {
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-6">
-                <h1>Update College</h1>
+                <h1>Update Community</h1>
               </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-                  <li class="breadcrumb-item active">Update College</li>
+                  <li class="breadcrumb-item active">Update Community</li>
                 </ol>
               </div>
             </div>
@@ -87,7 +87,7 @@ if (strlen($_SESSION['aid']) == 0) {
                 <!-- general form elements -->
                 <div class="card card-primary">
                   <div class="card-header">
-                    <h3 class="card-title">Update College Detail</h3>
+                    <h3 class="card-title">Update Community Detail</h3>
                   </div>
                   <!-- /.card-header -->
                   <!-- form start -->
@@ -101,12 +101,16 @@ if (strlen($_SESSION['aid']) == 0) {
                       <div class="card-body">
 
                         <div class="form-group">
-                          <label for="exampleInputEmail1">College Name</label>
-                          <input type="text" class="form-control" id="collegename" name="collegename" value="<?php echo $result['CollegeName']; ?>" required="true">
+                          <label for="CommunityCode">Community Code</label>
+                          <input type="text" class="form-control" id="CommunityCode" name="CommunityCode" value="<?php echo $result['CommunityCode']; ?>" required="true">
                         </div>
                         <div class="form-group">
-                          <label for="exampleInputEmail1">College Code</label>
-                          <input type="text" class="form-control" id="collegecode" name="collegecode" value="<?php echo $result['CollegeCode']; ?>" required="true">
+                          <label for="CommunityName">Community Name</label>
+                          <input type="text" class="form-control" id="CommunityName" name="CommunityName" value="<?php echo $result['CommunityName']; ?>" required="true">
+                        </div>
+                        <div class="form-group">
+                          <label for="NatureofORG">Nature of ORG</label>
+                          <input type="text" class="form-control" id="NatureofORG" name="NatureofORG" value="<?php echo $result['NatureofORG']; ?>" required="true">
                         </div>
 
                       <?php } ?>
