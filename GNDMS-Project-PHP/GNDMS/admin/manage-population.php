@@ -13,7 +13,7 @@ if (strlen($_SESSION['aid']) == 0) {
     $query = mysqli_query($con, "delete from tblpopulation where ID='$rid'");
     if ($query) {
       echo "<script>alert('Faculity deleted.');</script>";
-      echo "<script>window.location.href ='manage-faculity.php'</script>";
+      echo "<script>window.location.href ='manage-population.php'</script>";
     } else {
       echo "<script>alert('Something Went Wrong. Please try again.');</script>";
     }
@@ -25,7 +25,7 @@ if (strlen($_SESSION['aid']) == 0) {
 
   <head>
 
-    <title>Online College Faculty Record Management System | Manage Faculty</title>
+    <title>Online Grama Niladhari Division Management System | Manage Population</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -137,8 +137,8 @@ if (strlen($_SESSION['aid']) == 0) {
                               <td><?php echo $result['CreationDate'] ?></td>
 
                               <th>
-                                <a href="edit-faculity.php?fid=<?php echo $result['ID']; ?>" title="Edit Faculity Details"> <i class="fa fa-edit" aria-hidden="true"></i> </a> |
-                                <a href="manage-faculity.php?delid=<?php echo $result['ID']; ?>" onclick="return confirm('Do you really want to Delete ?');"><i class="fa fa-trash" aria-hidden="true"></i> </a>
+                                <a href="edit-population.php?fid=<?php echo $result['ID']; ?>" title="Edit population Details"> <i class="fa fa-edit" aria-hidden="true"></i> </a> |
+                                <a href="manage-population.php?delid=<?php echo $result['ID']; ?>" onclick="return confirm('Do you really want to Delete ?');"><i class="fa fa-trash" aria-hidden="true"></i> </a>
 
                               </th>
                             </tr>
